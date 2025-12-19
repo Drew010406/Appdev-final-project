@@ -208,7 +208,7 @@ function renderBooks() {
         
         // Heart Icon Logic
         const heartIcon = book.isFavorite ? 'ri-heart-fill' : 'ri-heart-line';
-        const heartColor = book.isFavorite ? 'color: #ef4444;' : 'color: white;';
+        const favClass = book.isFavorite ? 'btn-fav favorited' : 'btn-fav';
 
         card.innerHTML = `
             <div class="book-header">
@@ -223,7 +223,7 @@ function renderBooks() {
                 <button class="${btnClass}" onclick="toggleBookStatus('${book.id}')">
                     ${btnText}
                 </button>
-                <button class="btn-fav" onclick="toggleFavorite('${book.id}')" style="${heartColor}">
+                <button class="${favClass}" onclick="toggleFavorite('${book.id}')">
                     <i class="${heartIcon}"></i>
                 </button>
                 <button class="btn-history" onclick="viewHistory('${book.id}')">
